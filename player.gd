@@ -8,7 +8,7 @@ extends CharacterBody3D
 
 var target_velocity = Vector3.ZERO
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	#stores input direction
 	var direction = Vector3.ZERO
 	
@@ -32,7 +32,7 @@ func _physics_process(delta):
 	
 	# in air velocity
 	if not is_on_floor():
-		target_velocity.y = target_velocity.y - (fall_acceleration * delta)
+		target_velocity.y = target_velocity.y - (fall_acceleration * _delta)
 	
 	# character movement
 	velocity = target_velocity

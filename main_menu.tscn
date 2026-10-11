@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://csx24g8o2x5tj"]
+
+[ext_resource type="FontFile" uid="uid://cyxhh7ddkn62q" path="res://fonts/Montserrat-Medium.ttf" id="1_7vrkn"]
+[ext_resource type="Script" uid="uid://d04nxmkb60ff4" path="res://main_menu.gd" id="1_fu7sn"]
+[ext_resource type="Texture2D" uid="uid://dln8vcng6qggn" path="res://art/background.jpg" id="2_fu7sn"]
+
+[node name="MainMenu" type="CanvasLayer" unique_id=503520655]
+script = ExtResource("1_fu7sn")
+
+[node name="Control" type="Control" parent="." unique_id=2115195542]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control" unique_id=438088818]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.7028328, 1.4815115)
+theme_override_constants/margin_left = 90
+theme_override_constants/margin_top = 110
+theme_override_constants/margin_right = 90
+theme_override_constants/margin_bottom = 110
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer" unique_id=1156604063]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/MarginContainer/VBoxContainer" unique_id=238414095]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("1_7vrkn")
+theme_override_font_sizes/font_size = 60
+text = "Super Mega Maze Runner"
+
+[node name="PlayButton" type="Button" parent="Control/MarginContainer/VBoxContainer" unique_id=693532665]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_hover_color = Color(0.06666667, 0.9490196, 0.1882353, 1)
+theme_override_fonts/font = ExtResource("1_7vrkn")
+theme_override_font_sizes/font_size = 30
+action_mode = 0
+text = "      Play      "
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/MarginContainer/VBoxContainer" unique_id=474730547]
+custom_minimum_size = Vector2(0, 240)
+layout_mode = 2
+
+[node name="QuitButton" type="Button" parent="Control/MarginContainer/VBoxContainer" unique_id=2113056994]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_hover_color = Color(0.911227, 0.0077496525, 0.0151845785, 1)
+theme_override_fonts/font = ExtResource("1_7vrkn")
+theme_override_font_sizes/font_size = 30
+text = "      Quit      "
+
+[node name="Background" type="Node2D" parent="." unique_id=933484601]
+
+[node name="Sprite2D" type="Sprite2D" parent="Background" unique_id=1891854634]
+z_index = -1
+position = Vector2(835, 451)
+scale = Vector2(4.4690766, 2.890361)
+texture = ExtResource("2_fu7sn")
+
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

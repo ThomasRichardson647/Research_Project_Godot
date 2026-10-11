@@ -3,16 +3,19 @@
 [ext_resource type="PackedScene" uid="uid://d0ypm0v45pwdv" path="res://art/player.glb" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://cnd3r3qyfy5so" path="res://player.gd" id="1_onrkg"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_v6lpu"]
-radius = 1.0
+[sub_resource type="BoxShape3D" id="BoxShape3D_h2yge"]
+size = Vector3(1, 0.3803711, 1.1763916)
 
 [node name="Player" type="CharacterBody3D" unique_id=781419044]
 script = ExtResource("1_onrkg")
+speed = null
+fall_acceleration = null
 
 [node name="Pivot" type="Node3D" parent="." unique_id=1079876171]
 
 [node name="Character" parent="Pivot" unique_id=2127270124 instance=ExtResource("1_4flbx")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.2525506, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1419020249]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0.8, 0)
-shape = SubResource("SphereShape3D_v6lpu")
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0.266572, 0.19936523)
+shape = SubResource("BoxShape3D_h2yge")
